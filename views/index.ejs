@@ -1,0 +1,42 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>top</title>
+</head>
+
+<body>
+  <h1>電話帳</h1>
+  名前と電話番号をセットで登録する<br>
+
+  名前
+  <input type="text" class="input-text" />
+  
+   電話番号
+  <input type="text" class="input-text2" />
+  <button class="send-button">送信</button><br>
+  <br>
+  情報の削除はこちらから<br>
+  名前
+  <input type="text" class="delete-text" />
+  
+   電話番号
+  <input type="text" class="delete-text2" />
+  <button class="delete-button">削除</button>
+  <ul class="user-list">
+    <% for (const user of users) { %>
+      <li class="user-name"><%= user.name %> : <%= user.number %>  </li>
+     <!--
+      <li class="user-number"><%= user.number %></li>
+     -->
+    <% } %>
+  </ul>
+
+
+  <script src="/static/index.js" defer></script>
+</body>
+
+</html>
